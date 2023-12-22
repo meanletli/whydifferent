@@ -17,12 +17,6 @@ install_package() {
   pip install "$package_name"
 }
 
-# Check dependencies
-if ! command_exists pip || ! command_exists go || ! command_exists git; then
-  echo "Error: Please make sure 'pip', 'go', and 'git' are installed and in your PATH." >&2
-  exit 1
-fi
-
 # Install necessary Python packages
 user_feedback "Installing required Python packages..."
 install_package "requests"
